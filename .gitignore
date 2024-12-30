@@ -1,48 +1,98 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
-
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
+# ========================================
+# WordPress Core
+# ========================================
 /wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
+!/wp-admin/index.php
 /wp-includes/
+!/wp-includes/version.php
 /index.php
 /license.txt
 /readme.html
 /wp-*.php
 /xmlrpc.php
 
-# Configuration
+# ========================================
+# WordPress Configuration
+# ========================================
+# Ignore configuration file with sensitive data
 wp-config.php
+wp-config*.php
 
-# Example themes
-/wp-content/themes/twenty*/
+# ========================================
+# WordPress Content
+# ========================================
+# Plugins
+/wp-content/plugins/
+!/wp-content/plugins/index.php
+# Uncomment and whitelist specific plugins
+# !/wp-content/plugins/my-custom-plugin/
 
-# Example plugin
-/wp-content/plugins/hello.php
+# Themes
+/wp-content/themes/
+!/wp-content/themes/index.php
+# Uncomment and whitelist specific themes
+# !/wp-content/themes/my-custom-theme/
 
 # Uploads
 /wp-content/uploads/
+!/wp-content/uploads/index.php
 
-# Log files
+# Languages
+/wp-content/languages/
+
+# Ignore autoloaders
+/vendor/
+composer.lock
+composer.json
+
+# ========================================
+# Development and Build Files
+# ========================================
+/node_modules/
+/build/
+/dist/
+/.env
+.env.local
+.env.production
+.env.*.local
+
+# ========================================
+# Logs and Debugging
+# ========================================
 *.log
+/debug.log
+/wp-content/debug.log
 
-# htaccess
+# ========================================
+# Caching and Temporary Files
+# ========================================
+*.cache
+*.bak
+*.swp
+*.tmp
+*.zip
+*.tar.gz
+*.rar
+
+# ========================================
+# IDE and Editor Files
+# ========================================
+.vscode/
+.idea/
+/.DS_Store
+Thumbs.db
+
+# ========================================
+# Version Control and CI/CD
+# ========================================
+.git/
+.gitattributes
+.gitignore
+
+# ========================================
+# Hosting and Deployment Files
+# ========================================
 /.htaccess
-
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+/.htpasswd
+/.maintenance
+/.c9/
